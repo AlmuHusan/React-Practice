@@ -4,13 +4,14 @@ import Board from './components/Board';
 import AppStyle from './AppStyle.css';
 import { clone } from '@babel/types';
 
-const ROWS=3;
-const COLUMNS=3;
+const ROWS=2;
+const COLUMNS=2;
 const ROW_ARR= new Array(ROWS).fill('');
 const COL_ARR = new Array(COLUMNS).fill('');
 const GRID = ROW_ARR.map(x=>COL_ARR.slice());
-const MIN_TO_WIN=3;
-const INITIAL_STATE ={
+const MIN_TO_WIN=2;
+
+const INITIAL_STATE = {
   currentValue: 'X',
   grid: Lodash.cloneDeep(GRID),
   hasWon: false,
@@ -21,10 +22,12 @@ const diffCols = ({arr,item})=>{
   const lastItem = arr[arr.length-1];
   return item.columnIndex-lastItem.columnIndex;
 }
-const diffRows = ({arr,item})=>{
+
+const diffRows = ({arr,item}) => {
   const lastItem = arr[arr.length-1];
   return item.rowIndex-lastItem.rowIndex;
 }
+
 const compareToRest=({currentItems,gridItems,winString})=>{// vid 3 explanation 38:15
   const N=[currentItems];
   const NE=[currentItems];
@@ -69,7 +72,7 @@ const compareToRest=({currentItems,gridItems,winString})=>{// vid 3 explanation 
 
   while (i<gridItems.length && !hasWon){
     hasWon=applyDirection(gridItems[i]);
-    i++
+    i++;
   }
   return hasWon;
 }
@@ -120,20 +123,21 @@ handleClick = ({columnIndex,rowIndex})=>{
     grid,
     hasWon:gameOver,//renaming hasWon avoid conflict with console log
   }=this.state;
-  if(!gameOver){
-  const nextValue=currentValue==='X'?'O':'X';
-  const cloneGrid=Lodash.cloneDeep(grid);
-  cloneGrid[rowIndex][columnIndex]=currentValue;
-  const gridItems = mapGridIndexes({grid:cloneGrid, value:currentValue});
-  const hasWon=checkWin({gridItems, winString:MIN_TO_WIN});
-  //console.log({hasWon});
-  this.setState({
-    currentValue:nextValue,
-    grid:cloneGrid,
-    hasWon,
-    hasWonMessage: hasWon? `Player ${currentValue} has won!`:null,
-  });
-}
+
+  if(!gameOver) {
+    const nextValue=currentValue==='X'?'O':'X';
+    const cloneGrid=Lodash.cloneDeep(grid);
+    cloneGrid[rowIndex][columnIndex]=currentValue;
+    const gridItems = mapGridIndexes({grid:cloneGrid, value:currentValue});
+    const hasWon=checkWin({gridItems, winString:MIN_TO_WIN});
+    //console.log({hasWon});
+    this.setState({
+      currentValue:nextValue,
+      grid:cloneGrid,
+      hasWon,
+      hasWonMessage: hasWon? `Player ${currentValue} has won!`:null,
+    });
+  }
 }
 
   render(){

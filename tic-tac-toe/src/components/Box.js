@@ -1,9 +1,10 @@
 import React from 'react';
 import './Box.css';
-const border='1px solid black'
-
+const border='1px solid black';
+const imageScale=.8;
 const Box = ({firstRow,lastRow,firstIndex,lastIndex,onClick,size=60,columnIndex,rowIndex,value}) =>{
-    return(<div onClick={() =>{
+    return(
+    <div onClick={() =>{
         if(!value){
             onClick({columnIndex,rowIndex});
         }
@@ -15,7 +16,7 @@ const Box = ({firstRow,lastRow,firstIndex,lastIndex,onClick,size=60,columnIndex,
         borderBottom:lastRow ? 'none':border,
         borderLeft:!firstIndex && border,//alternative style
         borderRight:!lastIndex && border,
-        fontSize:size*.8,
+        fontSize:size*imageScale,
         height:size,
         width:size,
         display: 'flex',

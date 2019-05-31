@@ -3,11 +3,11 @@ import Box from './Box';
 import './Row.css';
 import { css } from '@emotion/core';
 
-const rowStyle=css({
+const rowStyle={
     display: 'flex',
     justifyContent:'content',
-})
-
+}
+//style={{display:'flex',justifyContent:'center'}}
 const Row = ({firstRow,lastRow,boxes,onClick,rowIndex}) =>(
 
     <div style={{display:'flex',justifyContent:'center'}}>
