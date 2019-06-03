@@ -1,7 +1,7 @@
 .App{
     text-align: center;
 }
-nav{
+Nav{
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -9,6 +9,7 @@ nav{
     background: rgb(73, 79, 82);
     color:white;
 }
+
 .nav-links{
     width:50%;
     display: flex;
