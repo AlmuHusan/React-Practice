@@ -2,7 +2,7 @@ import React from 'react';
 import About from './About';
 import Shop from './Shop';
 import Nav from './Nav';
-
+import itemDetail from './itemDetail';
 import './App.css';//switch makes the page stop the moment it reaches a certain point
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 function App() {
@@ -12,7 +12,8 @@ function App() {
       <Nav/>
       <Route path='/' exact component={Home}/>
       <Route path='/about' component={About}/>
-      <Route path='/shop' component={Shop}/>
+      <Route path='/shop' exact component={Shop}/>
+      <Route path="/shop/:id" component={itemDetail}/>
     </div>
     </Router>
   );
