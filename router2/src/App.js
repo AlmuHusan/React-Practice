@@ -4,7 +4,7 @@ import Shop from './Shop';
 import Nav from './Nav';
 import itemDetail from './itemDetail';
 import './App.css';//switch makes the page stop the moment it reaches a certain point
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
+import {BrowserRouter as Router,Route} from 'react-router-dom'
 function App() {
   return (
     <Router>

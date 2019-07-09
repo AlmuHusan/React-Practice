@@ -1,24 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
-
+const arr= [1,2,3,4,5,5]
 function App() {
+  var i;
+  var items=[]
+  items.push(<div>);
+  items.push(Hello);
+  items.push(</div>)
+  for(i=0;i<5;i++){
+    
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+     {
+      items
+       
+        }
     </div>
   );
 }
