@@ -4,12 +4,12 @@ import Board from './components/Board';
 import AppStyle from './AppStyle.css';
 import { clone } from '@babel/types';
 
-const ROWS=2;
-const COLUMNS=2;
+const ROWS=3;
+const COLUMNS=3;
 const ROW_ARR= new Array(ROWS).fill('');
 const COL_ARR = new Array(COLUMNS).fill('');
 const GRID = ROW_ARR.map(x=>COL_ARR.slice());
-const MIN_TO_WIN=2;
+const MIN_TO_WIN=3;
 
 const INITIAL_STATE = {
   currentValue: 'X',

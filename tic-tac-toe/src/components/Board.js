@@ -4,7 +4,6 @@ import { render } from 'react-dom';
 class Board extends React.Component{
     
     render(){
-        //console.log(this.props.rows);
     return(
     <div>
         {this.props.rows.map((row,index)=>(
